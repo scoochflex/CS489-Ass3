@@ -1,9 +1,14 @@
 import java.util.List;
 
-import javax.jws.WebMethod;
-import javax.jws.WebService;
-
-@WebService
 public interface FileShareService {
-    public String echo(String input);
+	
+	public void registerFile(String filename, String path, String clientAddress, long size);
+
+	public boolean unRegisterFile(int fid);
+
+	public List<String[]>  getAllSharedFiles();
+
+	public String[][] searchFilesByName(String filename);
+	
+	public String[][] searchFilesByAddress(String address);
 }
